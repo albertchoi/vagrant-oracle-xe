@@ -9,9 +9,7 @@ Vagrant.configure("2") do |config|
       puppet.manifests_path = "manifests"
       puppet.manifest_file  = "site.pp"
     end
-    #config.vm.customize [ "modifyvm", :id, "--name", "dev_env_oraxe" ,"--memory", "2048"]
     config.vm.provider :virtualbox do |vb|
-        #vb.customize ["modifyvm", :id, "--name", "dev_env_oraxe"]
         vb.customize ["modifyvm", :id, "--memory", "1024"]
     end
     #config.vm.boot_mode = :gui
